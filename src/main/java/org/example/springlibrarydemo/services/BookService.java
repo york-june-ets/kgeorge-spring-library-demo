@@ -23,7 +23,7 @@ public class BookService {
     public Book findById(Long id) {
         Optional<Book> book = bookRepository.findById(id);
         if (book.isEmpty()) {
-            throw new RuntimeException("Author not found");
+            throw new RuntimeException("Book not found");
         }
         return book.get();
     }

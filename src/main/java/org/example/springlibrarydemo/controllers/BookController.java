@@ -29,12 +29,12 @@ public class BookController {
         return bookService.save(book);
     }
     @PutMapping("/{id}")
-    public Book updateAuthor(@PathVariable Long id, @RequestBody Book book) {
+    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
         book.setId(id);
         return bookService.save(book);
     }
     @DeleteMapping("/{id}")
-    public void deleteAuthor(@PathVariable Long id) {
+    public void deleteBook(@PathVariable Long id) {
         bookService.delete(id);
     }
 
