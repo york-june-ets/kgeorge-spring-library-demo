@@ -30,4 +30,41 @@ public class Rental {
         }
     }
 
+    public Long getId() {
+        return id;
+    }
+    public Book getBook() {
+        return book;
+    }
+    public String getBorrowerName() {
+        return borrowerName;
+    }
+    public LocalDate getRentalDate() {
+        return rentalDate;
+    }
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void setBook(Book book) {
+        this.book = book;
+    }
+    public void setBorrowerName(String borrowerName) {
+        this.borrowerName = borrowerName;
+    }
+    public void setRentalDate(LocalDate rentalDate) {
+        this.rentalDate = rentalDate;
+    }
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
 }
