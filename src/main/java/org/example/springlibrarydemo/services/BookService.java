@@ -4,6 +4,8 @@ import org.example.springlibrarydemo.models.Book;
 import org.example.springlibrarydemo.repositories.BookRepository;
 import org.springframework.stereotype.Service;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,5 +36,22 @@ public class BookService {
 
     public void delete(Long id) {
         bookRepository.deleteById(id);
+    }
+
+    public Book findByTitle(String encodedTitle) {
+        String title = URLDecoder.decode(encodedTitle, StandardCharsets.UTF_8);
+        Optional<Book> book = bookRepository.findByTitle(title);
+        if(book.isEmpty()) {
+            throw new RuntimeException("Book not found");
+        }
+        return book.get();
+    }
+
+    public List<Book> findByAuthorId(Long id) {
+        Optional<List<Book>> books = bookRepository.findByAuthorId(id);
+        if(books.isEmpty()) {
+            throw new RuntimeException("No books found by author with id: " + id);
+        }
+        return books.get();
     }
 }

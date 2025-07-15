@@ -23,6 +23,14 @@ public class BookController {
     public Book getBookById(@PathVariable Long id) {
         return bookService.findById(id);
     }
+    @GetMapping("/title/{encodedTitle}") // encoded
+    public Book getBookByTitle(@PathVariable String encodedTitle) {
+        return bookService.findByTitle(encodedTitle);
+    }
+    @GetMapping("/author/{id}")
+    public List<Book> getBooksByAuthorId(@PathVariable Long id) {
+        return bookService.findByAuthorId(id);
+    }
 
     @PostMapping
     public Book createBook(@RequestBody Book book) {
