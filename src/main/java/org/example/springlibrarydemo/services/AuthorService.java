@@ -2,7 +2,6 @@ package org.example.springlibrarydemo.services;
 
 import org.example.springlibrarydemo.models.Author;
 import org.example.springlibrarydemo.repositories.AuthorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
